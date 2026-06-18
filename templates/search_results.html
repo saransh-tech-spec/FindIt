@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🔍 Search Results</h1>
+
+    <h2>Lost Items</h2>
+
+    {% for item in lost_results %}
+    <p>
+        <b>{{ item.item_name }}</b><br>
+        {{ item.description }}<br>
+        Contact: {{ item.contact }}
+    </p>
+    {% endfor %}
+
+    <h2>Found Items</h2>
+
+    {% for item in found_results %}
+    <p>
+        <b>{{ item.item_name }}</b><br>
+        {{ item.description }}<br>
+        Contact: {{ item.contact }}
+    </p>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lost Items</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>All Lost Items</h1>
+
+    
+    <button>Delete</button>
+</a>{% for item in items %}
+
+<div class="item-card">
+
+    <h2>{{ item.item_name }}</h2>
+
+    <p><b>Category:</b> {{ item.category }}</p>
+
+    <img src="{{ url_for('static', filename='uploads/' + item.photo) }}"
+         width="250">
+
+    <p>{{ item.description }}</p>
+
+    <p><b>Contact:</b> {{ item.contact }}</p>
+
+    <a href="/delete_lost/{{ item.id }}">
+        <button>🗑 Delete</button>
+    </a>
+
+    <a href="/edit_lost/{{ item.id }}">
+    <button>✏️ Edit</button>
+    </a>
+
+</div>
+
+{% endfor %}
+
+</body>
+
+</html>

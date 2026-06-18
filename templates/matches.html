@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Possible Matches</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🔍 Possible Matches</h1>
+
+    {% for match in matches %}
+
+    <div class="item-card">
+
+        <h3>Lost Item</h3>
+
+        <b>{{ match.lost.item_name }}</b><br>
+        {{ match.lost.description }}<br>
+        Contact: {{ match.lost.contact }}
+
+        <hr>
+
+        <h3>Found Item</h3>
+
+        <b>{{ match.found.item_name }}</b><br>
+        {{ match.found.description }}<br>
+        Contact: {{ match.found.contact }}
+
+    </div>
+
+    {% endfor %}
+
+    {% if matches|length == 0 %}
+        <h2>No Matches Found</h2>
+    {% endif %}
+
+</body>
+</html>

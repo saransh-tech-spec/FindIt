@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Item</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>✏️ Edit Lost Item</h1>
+
+    <form method="POST">
+
+        Item Name:
+        <input type="text" name="item_name" value="{{ item.item_name }}">
+
+        <br><br>
+
+        Description:
+        <input type="text" name="description" value="{{ item.description }}">
+
+        <br><br>
+
+        Contact:
+        <input type="text" name="contact" value="{{ item.contact }}">
+        <br><br>
+
+        <input type="submit" value="Update">
+
+    </form>
+
+</body>
+</html>

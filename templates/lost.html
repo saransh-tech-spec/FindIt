@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lost Item</title>
+    <link rel="stylesheet" 
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Report Lost Item</h1>
+
+    <form action="/lost" method="POST" enctype="multipart/form-data">
+        Item Name:
+    <input type="text" name="item_name">
+
+    <br><br>
+
+Category:
+<select name="category">
+    <option>Mobile</option>
+    <option>Wallet</option>
+    <option>Keys</option>
+    <option>ID Card</option>
+    <option>Bag</option>
+    <option>Other</option>
+</select>
+
+    <br><br>
+
+    Description:
+    <input type="text" name="description">
+        
+        <br><br>
+    
+        Contact Number:
+    <input type="text" name="contact">
+
+    <br><br>
+        Photo:
+    <input type="file" name="photo">
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+            
+    </form>
+
+    <br>
+
+    <a href="/">
+        <button>Back to Home</button>
+    </a>
+    <br><br>
+
+    
+
+</body>
+
+</html>
